@@ -1,3 +1,7 @@
+# CS6910 Assignment 1 : Implementation of FeedForward Neural Network
+
+The objective of this assignment is to implement a feedforward neural network architecture along with backpropogation and with the choice of selecting from a set of available optimizers, activation functions and loss functions mentioned below. The model if to be tested on Fashion-MNIST dataset. The assignment is divided into multiple sections and the report for the performance of the model on the datset is reported in the wandb report [here](https://wandb.ai/cs22m035/Assignment_1/reports/CS6910-Assignment-1--VmlldzozODMxMTAx/edit).
+
 <strong>Dataset</strong>. : FASHION MNIST <br />
 
 <strong>About Dataset</strong> : we have 60000 datapoints as training images and 10000 datapoints as test images with each image is a standardized 28*28 size in gray scale (i.e., 784 pixels) <br/>
@@ -46,34 +50,4 @@ sweep_config_temp={
 After setting up the sweep config and invoking it using the command ```wandb.agent(sweep_id,train)``` ,
 train function will be invoked for every combination possible for the hyperparameter choices given in the sweep configuration and corresponding optimizer that matched with any in ```"optimizer":{"values":['nadam']}``` will be called further. <br/>
 
-<strong>Evaluating a model </strong> : <br/>
 
-We are evaluating the model using mainly ```cross_entropy_loss``` but if you want to evaluate the model using squared loss then this choice should be added in the train_function as follows : <br/>
-```
-def train():
-  run=wandb.init()
-  config = wandb.config
- 
-  loss_fun=['squared_loss']
-```
-If you want to compare the loss between cross entropy and squared loss then write as follows in train() function:
-```
-def train():
-  run=wandb.init()
-  config = wandb.config
- 
-  loss_fun=['cross entropy' , 'squared_loss']
-```
-<strong> Flexibility of the code </strong> : <br/>
-
-If you want to add new Optimizer for example 'eve' do the following steps : <br/>
-
-<strong> step1</strong> : <br/> Write the eve optimizer code in a function and name it as eve and then Add eve as optimizer value in the sweep configuration as follows : <br/>
-```
-"optimizer":{ "values" : ['eve'] }
-```
-<strong>step2</strong> : <br/> Add the following two lines of code in train function : <br/>
-```
-if config.optimizer == 'eve':
-    W , b = eve(train_x,train_y,valid_x,valid_y,d,hl,ol,config.act_fun,loss_fun,config.epochs,config.eta,config.strat,alpha,config.batch_size)
-```

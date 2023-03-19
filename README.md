@@ -1,1 +1,1 @@
- Dataset. : FASHION MNIST
+ **Dataset**. : FASHION MNIST

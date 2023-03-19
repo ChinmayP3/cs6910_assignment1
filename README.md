@@ -50,4 +50,9 @@ sweep_config_temp={
 After setting up the sweep config and invoking it using the command ```wandb.agent(sweep_id,train)``` ,
 train function will be invoked for every combination possible for the hyperparameter choices given in the sweep configuration and corresponding optimizer that matched with any in ```"optimizer":{"values":['nadam']}``` will be called further. <br/>
 
-
+<strong> For running train.py  </strong>
+```
+ !pip install wandb qqq
+ !python checktrain.py 
+ 
+```

@@ -53,6 +53,6 @@ train function will be invoked for every combination possible for the hyperparam
 <strong> For running train.py  </strong>
 ```
  !pip install wandb qqq
- !python checktrain.py 
+ !python train.py 
  
 ```

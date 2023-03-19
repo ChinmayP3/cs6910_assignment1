@@ -1006,12 +1006,9 @@ def run_code():
     W , b = nadam(train_x,train_y,valid_x,valid_y,d,hl,ol,act_fun,loss_fun,epochs,eta,strat,alpha,batch_size,eps=1e-8 ,beta1=  0.9 , beta2=0.99)
  
 
-# wandb.init(entity="cs22m035", project="confusion")
-# wandb.run.name = "mean_squared_error"
- wandb.init(entity=args.wandb_entity, project=args.wandb_project)
+wandb.init(entity=args.wandb_entity, project=args.wandb_project)
 run_code()
-#weights,biases,epoch_train_loss,epoch_val_loss,acc_train,acc_val=learning_params(args.num_layers,args.hidden_size,train_x,train_y,val_x,val_y,args.optimizer,args.learning_rate,args.epochs,args.batch_size,args.activation,args.weight_init,args.weight_decay,args.momemtum ,args.beta ,args.beta1 ,args.beta2 ,args.epsilon)
-
+ 
 
 
 

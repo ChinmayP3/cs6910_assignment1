@@ -10,7 +10,7 @@
 <strong>step 1 :</strong> Modify the sweep configuration as required or as you intrested. <br/>
 <strong>step 2:</strong> Setup the sweep as follows :
 ```
-sweep_id = wandb.sweep(sweep_config_temp, entity="cs21m027_cs21m011", project="DL_ASG_1_final")
+sweep_id = wandb.sweep(sweep_config_temp, entity="CS22035", project="Assignment_1")
 wandb.agent(sweep_id, train)
 ```
 The training will be done automatically for training data and validate the model on validation data and also for the testing data. wandb automatically log plots and charts in the mentioned entity under given project name. wandb will generate train , valid and test accuracy and their losses along with confusion matrix on test data and also sample image of each class along with its label.
